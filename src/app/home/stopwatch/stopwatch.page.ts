@@ -40,8 +40,13 @@ export class StopwatchPage implements OnInit, AfterViewInit, OnDestroy {
     // );
   }
 
+  ionViewDidLeave() {
+    this.onReset();
+    console.log('did leave')
+  }
+
   ngOnDestroy() {
-    this.intervalObs$.unsubscribe();
+    this.onReset();
   }
 
   onToggle(pause: boolean) {
@@ -57,7 +62,9 @@ export class StopwatchPage implements OnInit, AfterViewInit, OnDestroy {
 
   onReset() {
     this.pause = true;
-    this.intervalObs$.unsubscribe();
+    if (this.intervalObs$) {
+      this.intervalObs$.unsubscribe();
+    }
     this.clock = 0;
   }
 }

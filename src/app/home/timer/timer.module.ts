@@ -7,14 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { TimerPageRoutingModule } from './timer-routing.module';
 
 import { TimerPage } from './timer.page';
+import { SharedModule } from '../../shared/shared.module';
+import { TimerCreateComponent } from '../../shared/timer-create/timer-create.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TimerPageRoutingModule
+    TimerPageRoutingModule,
+    SharedModule
   ],
-  declarations: [TimerPage]
+  declarations: [TimerPage],
+  entryComponents: [TimerCreateComponent]
 })
-export class TimerPageModule {}
+export class TimerPageModule { }

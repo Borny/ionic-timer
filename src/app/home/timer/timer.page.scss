@@ -1,0 +1,21 @@
+.grid {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.row {
+  flex: 1 1 auto;
+}
+
+.clock {
+  font-size: 4rem;
+
+  @media (min-width: 540px) {
+    font-size: 5rem;
+  }
+}
+
+p {
+  margin: 0
+}

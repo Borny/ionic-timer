@@ -10,8 +10,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TimeFormatPipe } from './pipes/time-format.pipe';
 
+import { FocusDirective } from './directives/input-focus.directive';
+
 @NgModule({
-  declarations: [AppComponent
+  declarations: [
+    AppComponent,
+    // FocusDirective
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],

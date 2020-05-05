@@ -1,6 +1,9 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
-import { mapTo, scan, switchMap } from 'rxjs/operators';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy, QueryList } from '@angular/core';
+
+import { mapTo, scan, switchMap, startWith, filter, tap } from 'rxjs/operators';
 import { fromEvent, interval, merge, of, Observable, Subscription } from 'rxjs';
+
+import { IonButton } from '@ionic/angular';
 
 import { StopwatchDirective } from '../../directives/stopwatch.directive';
 
@@ -11,10 +14,16 @@ import { StopwatchDirective } from '../../directives/stopwatch.directive';
 })
 export class StopwatchPage implements OnInit, AfterViewInit, OnDestroy {
 
-  clock: number = 0;
-  pause = true;
+  // @ViewChild('btnSearch', { static: true }) searchButtonRef: ElementRef<HTMLButtonElement>;
+  // @ViewChild('searchInput', { static: true }) searchInput: QueryList<ElementRef>;
 
-  // @ViewChild('start', { static: true }) startBtn: ElementRef;
+  // public query = '';
+  // public isSearchInputVisible$: Observable<boolean> = of(false);
+
+  public clock = 0;
+  public pause = true;
+
+  // @ViewChild('start', { static: true }) startBtn: ElementRef<any>;
   // @ViewChild('pause', { static: true }) pauseBtn: ElementRef;
   // @ViewChild('reset', { static: true }) resetBtn: ElementRef;
 
@@ -22,10 +31,20 @@ export class StopwatchPage implements OnInit, AfterViewInit, OnDestroy {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   ngAfterViewInit() {
+    // this.isSearchInputVisible$ = merge(
+    //   fromEvent(this.searchButtonRef.nativeElement, 'click')
+    //     .pipe(
+    //       tap(e => e.stopPropagation()),
+    //       mapTo(true)),
+    //   fromEvent(document.body, 'click')
+    //     .pipe(
+    //       filter(() => this.query === ''),
+    //       mapTo(false))
+    // ).pipe(startWith(false));
+
     // const start$ = fromEvent(this.startBtn.nativeElement, 'click').pipe(mapTo(true));
 
     // this.intervalObs$ = merge(start$).pipe(
@@ -42,7 +61,6 @@ export class StopwatchPage implements OnInit, AfterViewInit, OnDestroy {
 
   ionViewDidLeave() {
     this.onReset();
-    console.log('did leave')
   }
 
   ngOnDestroy() {

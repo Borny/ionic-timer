@@ -8,7 +8,8 @@ import { StopwatchPageRoutingModule } from './stopwatch-routing.module';
 
 import { StopwatchPage } from './stopwatch.page';
 import { StopwatchDirective } from '../../directives/stopwatch.directive';
-import { TimeFormatPipe } from '../../pipes/time-format.pipe';
+// import { FocusDirective } from '../../directives/input-focus.directive';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -16,8 +17,9 @@ import { TimeFormatPipe } from '../../pipes/time-format.pipe';
     FormsModule,
     IonicModule,
     StopwatchPageRoutingModule,
+    SharedModule
   ],
-  declarations: [StopwatchPage, TimeFormatPipe],
+  declarations: [StopwatchPage],
   providers: []
 })
 export class StopwatchPageModule { }

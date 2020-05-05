@@ -1,0 +1,30 @@
+form,
+ion-grid,
+ion-row {
+  height: 100%;
+}
+
+.display-block {
+  display: block;
+  text-align: center;
+}
+
+.display-flex {
+  display: flex;
+  flex-flow: column;
+}
+
+.container {
+  flex: 1 1 auto;
+}
+
+.rounds-number {
+  font-size: 3rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+.grid {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.row {
+  flex: 1 1 auto;
+}
+
+.text {
+  font-size: 4rem;
+
+  @media (min-width: 540px) {
+    font-size: 5rem;
+  }
+
+  span {
+    font-size: 3rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+.text__sm {
+  font-size: 2rem;
+
+  @media (min-width: 540px) {
+    font-size: 3rem;
+  }
+
+}
+
+p {
+  margin: 0
+}

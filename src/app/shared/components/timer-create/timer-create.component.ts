@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-timer-create',
   templateUrl: './timer-create.component.html',
   styleUrls: ['./timer-create.component.scss'],
 })

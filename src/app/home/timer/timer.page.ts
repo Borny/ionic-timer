@@ -3,7 +3,7 @@ import { ModalController } from '@ionic/angular';
 
 import { Subscription, interval, Observable, fromEvent, timer } from 'rxjs';
 
-import { TimerCreateComponent } from '../../shared/timer-create/timer-create.component';
+import { TimerCreateComponent } from '../../shared/components/timer-create/timer-create.component';
 import { tap, mapTo } from 'rxjs/operators';
 
 @Component({

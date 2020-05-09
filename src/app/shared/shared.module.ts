@@ -6,15 +6,17 @@ import { IonicModule } from '@ionic/angular';
 
 import { TimeFormatPipe } from '../pipes/time-format.pipe';
 
-import { TimerCreateComponent } from './timer-create/timer-create.component';
+import { TimerCreateComponent } from './components/timer-create/timer-create.component';
+import { PlayerControlsComponent } from './components/player-controls/player-controls.component';
 
 @NgModule({
   declarations: [
     TimerCreateComponent,
-    TimeFormatPipe
+    TimeFormatPipe,
+    PlayerControlsComponent
   ],
   imports: [CommonModule, FormsModule, IonicModule],
-  exports: [TimerCreateComponent, TimeFormatPipe],
+  exports: [TimerCreateComponent, PlayerControlsComponent, TimeFormatPipe],
   providers: [],
 })
 export class SharedModule { }

@@ -11,10 +11,10 @@ import { tap, mapTo } from 'rxjs/operators';
   templateUrl: './timer.page.html',
   styleUrls: ['./timer.page.scss'],
 })
-export class TimerPage implements OnDestroy {
+export class TimerPage implements OnInit, OnDestroy {
 
   public rounds = 1;
-  public clock = 3;
+  public clock = 70;
   public pause = true;
   public isBlocked = false;
   public initialRounds = this.rounds;
@@ -23,8 +23,13 @@ export class TimerPage implements OnDestroy {
   public intervalObs$: Subscription;
 
   private _initialClock = this.clock;
+  private _audio: HTMLAudioElement;
 
   constructor(private modalCtrl: ModalController) { }
+
+  ngOnInit() {
+    this._audio = new Audio('../../assets/sounds/beep.mp3');
+  }
 
   ionViewDidLeave() {
     this.onReset();
@@ -65,12 +70,13 @@ export class TimerPage implements OnDestroy {
       .pipe(
         tap(() => {
           this.clock--;
+          if (this.clock >= 1 && this.clock <= 3) {
+            this._playSound();
+          }
           console.log(this.clock);
           if (this.clock < 0 && this.initialRounds > 1) {
-            console.log('if');
             this._roundsCount();
           } else if (this.clock < 0) {
-            console.log('else if');
             this.pause = true;
             this.isBlocked = true;
             this.intervalObs$.unsubscribe();
@@ -89,6 +95,14 @@ export class TimerPage implements OnDestroy {
     this.isBlocked = false;
     this.clock = this._initialClock;
     this.rounds = 1;
+  }
+
+  ////////////
+  // PRIVATE
+  ////////////
+
+  private _playSound() {
+    this._audio.play();
   }
 
   private _roundsCount() {

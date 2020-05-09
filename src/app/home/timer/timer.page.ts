@@ -25,10 +25,12 @@ export class TimerPage implements OnInit, OnDestroy {
   private _initialClock = this.clock;
   private _audio: HTMLAudioElement;
 
+  private readonly TAP_SOUND = '../../assets/sounds/button-50.mp3';
+
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    this._audio = new Audio('../../assets/sounds/beep.mp3');
+    this._audio = new Audio(this.TAP_SOUND);
   }
 
   ionViewDidLeave() {

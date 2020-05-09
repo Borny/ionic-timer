@@ -20,7 +20,6 @@ import { FocusDirective } from './directives/input-focus.directive';
     AppComponent,
     StopwatchDirective,
     FocusDirective
-
   ],
   entryComponents: [],
   imports: [

@@ -10,15 +10,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TimeFormatPipe } from './pipes/time-format.pipe';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { StopwatchDirective } from './directives/stopwatch.directive';
 import { FocusDirective } from './directives/input-focus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // FocusDirective
+    StopwatchDirective,
+    FocusDirective
+
   ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     StatusBar,
     SplashScreen,

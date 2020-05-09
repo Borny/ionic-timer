@@ -11,7 +11,7 @@ import { tap, mapTo } from 'rxjs/operators';
   templateUrl: './timer.page.html',
   styleUrls: ['./timer.page.scss'],
 })
-export class TimerPage implements OnInit, OnDestroy, AfterViewInit {
+export class TimerPage implements OnDestroy {
 
   public rounds = 1;
   public clock = 3;
@@ -25,12 +25,6 @@ export class TimerPage implements OnInit, OnDestroy, AfterViewInit {
   private _initialClock = this.clock;
 
   constructor(private modalCtrl: ModalController) { }
-
-  ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
-  }
 
   ionViewDidLeave() {
     this.onReset();
@@ -56,9 +50,6 @@ export class TimerPage implements OnInit, OnDestroy, AfterViewInit {
           this._initialClock = data.timer;
           this.initialRounds = data.rounds;
           this.clock = data.timer;
-          // if (data.rounds > 0) {
-          //   this.rounds = 1;
-          // }
         }
       }
     );
@@ -72,13 +63,13 @@ export class TimerPage implements OnInit, OnDestroy, AfterViewInit {
     }
     this.intervalObs$ = interval(1000)
       .pipe(
-        tap(value => {
-          console.log(this.clock);
+        tap(() => {
           this.clock--;
-          if (this.clock === 0 && this.initialRounds > 1) {
+          console.log(this.clock);
+          if (this.clock < 0 && this.initialRounds > 1) {
             console.log('if');
             this._roundsCount();
-          } else if (this.clock === 0) {
+          } else if (this.clock < 0) {
             console.log('else if');
             this.pause = true;
             this.isBlocked = true;
@@ -102,14 +93,12 @@ export class TimerPage implements OnInit, OnDestroy, AfterViewInit {
 
   private _roundsCount() {
     if (this.rounds < this.initialRounds) {
-      setTimeout(() => {
-        this.clock = this._initialClock;
-        this.rounds++;
-      }, 1000);
+      this.clock = this._initialClock;
+      this.rounds++;
     } else {
       this.intervalObs$.unsubscribe();
       this.pause = true;
-      // this.isDone = true;
+      this.isBlocked = true;
     }
   }
 

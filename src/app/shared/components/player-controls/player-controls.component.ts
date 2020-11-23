@@ -11,11 +11,11 @@ export class PlayerControlsComponent {
   @Output() toggle: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() reset: EventEmitter<void> = new EventEmitter<void>();
 
-  onToggle(value: boolean) {
-    this.toggle.emit(value);
+  public onToggle(): void {
+    this.toggle.emit(!this.pause);
   }
 
-  onReset() {
+  public onReset(): void {
     this.reset.emit();
   }
 

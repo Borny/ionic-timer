@@ -10,6 +10,8 @@ import { TimerCreateComponent } from './components/timer-create/timer-create.com
 import { TabataCreateComponent } from './components/tabata-create/tabata-create.component';
 import { PlayerControlsComponent } from './components/player-controls/player-controls.component';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [
     TimerCreateComponent,
@@ -17,8 +19,14 @@ import { PlayerControlsComponent } from './components/player-controls/player-con
     TimeFormatPipe,
     PlayerControlsComponent
   ],
-  imports: [CommonModule, FormsModule, IonicModule],
-  exports: [TimerCreateComponent, PlayerControlsComponent, TimeFormatPipe],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    NgCircleProgressModule.forRoot({
+    })
+  ],
+  exports: [TimerCreateComponent, PlayerControlsComponent, TimeFormatPipe, NgCircleProgressModule],
   providers: [],
 })
 export class SharedModule { }

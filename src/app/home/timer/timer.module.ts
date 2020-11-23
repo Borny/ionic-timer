@@ -8,6 +8,7 @@ import { TimerPageRoutingModule } from './timer-routing.module';
 
 import { TimerPage } from './timer.page';
 import { SharedModule } from '../../shared/shared.module';
+
 import { TimerCreateComponent } from '../../shared/components/timer-create/timer-create.component';
 
 @NgModule({

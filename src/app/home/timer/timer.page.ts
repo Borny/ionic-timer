@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
-import { Subscription, interval, Observable, fromEvent, timer } from 'rxjs';
+import { Subscription, interval } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 import { TimerCreateComponent } from '../../shared/components/timer-create/timer-create.component';
-import { tap, mapTo } from 'rxjs/operators';
 
 @Component({
   selector: 'app-timer',
@@ -19,6 +19,9 @@ export class TimerPage implements OnInit, OnDestroy {
   public isBlocked = false;
   public initialRounds = this.rounds;
   public isDone = false;
+  public radius = 100;
+  public percent = 0;
+  public progress = 1;
 
   public intervalObs$: Subscription;
 
@@ -29,19 +32,19 @@ export class TimerPage implements OnInit, OnDestroy {
 
   constructor(private modalCtrl: ModalController) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._audio = new Audio(this.TAP_SOUND);
   }
 
-  ionViewDidLeave() {
+  ionViewDidLeave(): void {
     this.onReset();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.onReset();
   }
 
-  public onCreateTimer() {
+  public onCreateTimer(): void {
     this.onReset();
     this.modalCtrl.create({
       keyboardClose: true,
@@ -53,29 +56,32 @@ export class TimerPage implements OnInit, OnDestroy {
         this.pause = true;
         const { data } = await modalEl.onWillDismiss();
         if (data) {
-          console.log('data: ', data);
-          this._initialClock = data.timer;
+          if (data.totalSeconds !== 0) {
+            this._initialClock = data.totalSeconds;
+            this.clock = data.totalSeconds;
+          }
           this.initialRounds = data.rounds;
-          this.clock = data.timer;
         }
       }
     );
   }
 
-  public onToggle(pause: boolean) {
-    this.pause = pause;
-    if (pause) {
+  public onToggle(pause?: boolean): void {
+    this.pause = !this.pause;
+    if (this.pause && this.intervalObs$) {
       this.intervalObs$.unsubscribe();
       return;
     }
+
     this.intervalObs$ = interval(1000)
       .pipe(
         tap(() => {
+          this.percent = Math.floor((this.progress / this._initialClock) * 100);
+          this.progress++;
           this.clock--;
           if (this.clock >= 1 && this.clock <= 3) {
             this._playSound();
           }
-          console.log(this.clock);
           if (this.clock < 0 && this.initialRounds > 1) {
             this._roundsCount();
           } else if (this.clock < 0) {
@@ -97,6 +103,8 @@ export class TimerPage implements OnInit, OnDestroy {
     this.isBlocked = false;
     this.clock = this._initialClock;
     this.rounds = 1;
+    this.percent = 0;
+    this.progress = 1;
   }
 
   ////////////
@@ -108,6 +116,8 @@ export class TimerPage implements OnInit, OnDestroy {
   }
 
   private _roundsCount() {
+    this.progress = 1;
+    this.percent = 0;
     if (this.rounds < this.initialRounds) {
       this.clock = this._initialClock;
       this.rounds++;

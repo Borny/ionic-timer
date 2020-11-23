@@ -16,26 +16,14 @@
         <ion-col size-sm="6" offset-sm="3" class="display-flex">
           <div class="container display-flex">
             <ion-item>
-              <ion-label position="floating">Minutes</ion-label>
-              <ion-input
-                type="number"
-                #minutes="ngModel"
-                ngModel
-                max="59"
-                name="minutes"
-              ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating">Seconds</ion-label>
-              <ion-input
-                type="number"
-                #seconds="ngModel"
-                required
-                min="1"
-                max="59"
-                ngModel
-                name="seconds"
-              ></ion-input>
+              <ion-label>Round duration</ion-label>
+              <ion-datetime
+                displayFormat="mm:ss"
+                placeholder="Choose a time"
+                #fullTime="ngModel"
+                name="fullTime"
+                [(ngModel)]="defaultTime"
+              ></ion-datetime>
             </ion-item>
           </div>
           <div class="container display-flex">

@@ -6,26 +6,8 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid class="grid ion-text-center">
-    <ion-row class="ion-align-items-center">
-      <!-- Hide input directive -->
-      <!-- <ion-col size="12" size-sm="6" offset-sm="3">
-        <button #btnSearch>Search</button>
-        <input
-          type="text"
-          [(ngModel)]="query"
-          #searchInput
-          *ngIf="isSearchInputVisible$ |async"
-          appFocus
-        />
-        <p>{{query === '' ? 'nothing for now...' : query}}</p>
-      </ion-col> -->
-    </ion-row>
     <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
-        <!-- <ng-container *ngIf="intervalObs$ | async as clock; else default">
-      {{clock | timeFormat}}
-    </ng-container>
-    <ng-template #default>00:00:00</ng-template> -->
         <p class="clock">{{clock | timeFormat}}</p>
       </ion-col>
     </ion-row>

@@ -16,6 +16,24 @@
         <p class="clock">{{clock | timeFormat}}</p>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="6" offset-sm="3">
+        <circle-progress
+          (click)="onToggle()"
+          [percent]="percent"
+          [radius]="radius"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#428cff'"
+          [innerStrokeColor]="'#50c8ff'"
+          [animation]="false"
+          [animationDuration]="300"
+          [showTitle]="false"
+          [showUnits]="false"
+          [showSubtitle]="false"
+        ></circle-progress>
+      </ion-col>
+    </ion-row>
     <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
         <p class="clock">Round</p>

@@ -14,12 +14,12 @@ export class TimeFormatPipe implements PipeTransform {
     const minutes = Math.floor((value / 60) % 60);
     const seconds = value % 60;
     if (hours === 0) {
-      return `${this.padding(minutes)}${minutes}:${this.padding(seconds)}${seconds}`
+      return `${this._padding(minutes)}${minutes}:${this._padding(seconds)}${seconds}`
     }
-    return `${this.padding(hours)}${hours}:${this.padding(minutes)}${minutes}:${this.padding(seconds)}${seconds}`
+    return `${this._padding(hours)}${hours}:${this._padding(minutes)}${minutes}:${this._padding(seconds)}${seconds}`
   }
 
-  private padding(time: number) {
+  private _padding(time: number) {
     return time < 10 ? '0' : '';
   }
 }

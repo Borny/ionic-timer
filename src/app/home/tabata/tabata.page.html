@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Tabata</ion-title>
-    <ion-buttons slot="primary">
+    <!-- <ion-buttons slot="primary">
       <ion-button (click)="onCreateTabata()">
         <ion-icon color="primary" name="add" slot="icon-only"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -23,9 +23,7 @@
     </ion-row>
     <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
-        <p class="text" [ngClass]="intervalTypeTextColor">
-          {{textInfo}}
-        </p>
+        <p class="text" [ngClass]="intervalTypeTextColor">{{textInfo}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="row ion-align-items-center">

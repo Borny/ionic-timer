@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1606228169944,
+  "timestamp": 1606232702248,
   "index": "https://Borny.github.io/ionic-timer/index.html",
   "assetGroups": [
     {
@@ -277,7 +277,7 @@
     "https://Borny.github.io/ionic-timer/assets/sounds/button-50.mp3": "7ccd9f0133e55fd30b1817accd93fa504878bbfa",
     "https://Borny.github.io/ionic-timer/common-es2015.281987c174d6c855bce8.js": "39b9334225197c24abc8246dc1c9d41d80834503",
     "https://Borny.github.io/ionic-timer/common-es5.281987c174d6c855bce8.js": "1be01c5eb9fa7b73997020f6ccc1f2dee09566c5",
-    "https://Borny.github.io/ionic-timer/index.html": "db8ada1d3c1b09ae0a928275759f23979aae3064",
+    "https://Borny.github.io/ionic-timer/index.html": "1d71f1e7370ebc82cf0139968e11b54a4ca63931",
     "https://Borny.github.io/ionic-timer/main-es2015.84377ab88b529824626e.js": "85168af1587dfae529400508f989d36f80db5281",
     "https://Borny.github.io/ionic-timer/main-es5.84377ab88b529824626e.js": "5300cb5ecada3a2224c33f4eabd394ee59f5dcd4",
     "https://Borny.github.io/ionic-timer/manifest.webmanifest": "24993e03124a6d2e375dc77e5cb4dc781835f342",

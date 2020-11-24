@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
 
 import { TimerPageRoutingModule } from './timer-routing.module';
 
@@ -17,7 +18,10 @@ import { TimerCreateComponent } from '../../shared/components/timer-create/timer
     FormsModule,
     IonicModule,
     TimerPageRoutingModule,
-    SharedModule
+    SharedModule,
+  ],
+  providers: [
+    Insomnia
   ],
   declarations: [TimerPage],
   entryComponents: [TimerCreateComponent]

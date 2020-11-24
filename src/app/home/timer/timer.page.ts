@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
 
 import { Subscription, interval } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -30,7 +31,9 @@ export class TimerPage implements OnInit, OnDestroy {
 
   private readonly TAP_SOUND = '../../assets/sounds/button-50.mp3';
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(
+    private insomnia: Insomnia,
+    private modalCtrl: ModalController) { }
 
   ngOnInit(): void {
     this._audio = new Audio(this.TAP_SOUND);
@@ -89,6 +92,7 @@ export class TimerPage implements OnInit, OnDestroy {
             this.isBlocked = true;
             this.intervalObs$.unsubscribe();
           }
+          this.insomnia.keepAwake();
         })
       )
       .subscribe(() => {
@@ -105,6 +109,7 @@ export class TimerPage implements OnInit, OnDestroy {
     this.rounds = 1;
     this.percent = 0;
     this.progress = 1;
+    this.insomnia.allowSleepAgain();
   }
 
   ////////////

@@ -1,6 +1,6 @@
 # Ionic Timer
 
-https://ionic-timer-625fb.web.app/
+https://borny.github.io/ionic-timer/
 
 Ionic-Angular app with stopwatch and timer functionalities
 

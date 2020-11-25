@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1606262817061,
+  "timestamp": 1606298852826,
   "index": "https://Borny.github.io/ionic-timer/index.html",
   "assetGroups": [
     {
@@ -261,7 +261,7 @@
     "https://Borny.github.io/ionic-timer/96-es5.e40bd7a355c2548a3669.js": "8c7b6957a9e2db183fde1fd00c308e20c2fad41c",
     "https://Borny.github.io/ionic-timer/97-es2015.a7272d00c34e162fbcbb.js": "c8561b6f6406e946f3265eeabcf4af725661aa19",
     "https://Borny.github.io/ionic-timer/97-es5.a7272d00c34e162fbcbb.js": "94ddd1a8c057f058a8971fac67db84e1a81518c9",
-    "https://Borny.github.io/ionic-timer/assets/icon/favicon.png": "300cbd2d51a3e719858d698ac093f80949ddcabd",
+    "https://Borny.github.io/ionic-timer/assets/icon/favicon.png": "cc9d3b78e35b6d9e6785071d29ec47a754154ac9",
     "https://Borny.github.io/ionic-timer/assets/icons/icon-128x128.png": "c417fb4c290f8bc1ea6a18d93239b624936218fb",
     "https://Borny.github.io/ionic-timer/assets/icons/icon-144x144.png": "ddadf5d5d62e67f7b8cddf323b7ff75cb7a7fa4a",
     "https://Borny.github.io/ionic-timer/assets/icons/icon-152x152.png": "cc42be6c935df5a50d4f05aac921a0123d870185",

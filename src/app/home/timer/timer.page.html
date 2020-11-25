@@ -13,11 +13,6 @@
   <ion-grid class="grid ion-text-center grid">
     <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
-        <p class="clock">{{clock | timeFormat}}</p>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12" size-sm="6" offset-sm="3">
         <circle-progress
           (click)="onToggle()"
           [percent]="percent"
@@ -25,13 +20,17 @@
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"
           [outerStrokeColor]="'#428cff'"
-          [innerStrokeColor]="'#50c8ff'"
+          [innerStrokeColor]="pause ? '#ff4961': '#50c8ff'"
           [animation]="false"
           [animationDuration]="300"
-          [title]="pause ? 'Resting' : 'On'"
+          [title]="clock | timeFormat"
           [showTitle]="true"
           [showUnits]="false"
-          [showSubtitle]="false"
+          [showSubtitle]="true"
+          [subtitle]="pause ? 'Paused' : ''"
+          [titleFontSize]="35"
+          [subtitleFontSize]="25"
+          [titleColor]="'#428cff'"
         ></circle-progress>
       </ion-col>
     </ion-row>
@@ -41,7 +40,7 @@
         <p class="clock">{{rounds}}<span>/{{initialRounds}}</span></p>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="row ion-align-items-center">
       <ion-col class="ion-padding-vertical" size="12" size-sm="6" offset-sm="3">
         <player-controls
           [isBlocked]="isBlocked"

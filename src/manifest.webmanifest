@@ -2,7 +2,7 @@
   "name": "Ionic Timer",
   "short_name": "Ionic Timer",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#1f1f1f",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

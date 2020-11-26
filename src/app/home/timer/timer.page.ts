@@ -23,13 +23,21 @@ export class TimerPage implements OnInit, OnDestroy {
   public radius = 100;
   public percent = 0;
   public progress = 1;
+  public start = true;
 
   public intervalObs$: Subscription;
+
+  public readonly PRIMARY_COLOR = '#428cff';
+  public readonly SECONDARY_COLOR = '#50c8ff';
+  public readonly DANGER_COLOR = '#ff4961';
 
   private _initialClock = this.clock;
   private _audio: HTMLAudioElement;
 
   private readonly TAP_SOUND = '../../assets/sounds/button-50.mp3';
+  private readonly START = 'Start';
+  private readonly PAUSED = 'Paused';
+  private readonly ON = 'On';
 
   constructor(
     private insomnia: Insomnia,
@@ -71,6 +79,7 @@ export class TimerPage implements OnInit, OnDestroy {
 
   public onToggle(pause?: boolean): void {
     this.pause = !this.pause;
+    this.start = false;
     if (this.pause && this.intervalObs$) {
       this.intervalObs$.unsubscribe();
       return;
@@ -103,6 +112,7 @@ export class TimerPage implements OnInit, OnDestroy {
     if (this.intervalObs$) {
       this.intervalObs$.unsubscribe();
     }
+    this.start = true;
     this.pause = true;
     this.isBlocked = false;
     this.clock = this._initialClock;
@@ -110,6 +120,16 @@ export class TimerPage implements OnInit, OnDestroy {
     this.percent = 0;
     this.progress = 1;
     this.insomnia.allowSleepAgain();
+  }
+
+  public getSubtitle(): string {
+    if (this.start) {
+      return this.START
+    } else if (this.pause) {
+      return this.PAUSED
+    } else {
+      return this.ON
+    }
   }
 
   ////////////

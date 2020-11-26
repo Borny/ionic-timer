@@ -14,23 +14,25 @@
     <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
         <circle-progress
+          [ngClass]="pause && !start ? 'paused': ''"
           (click)="onToggle()"
+          [startFromZero]="false"
           [percent]="percent"
           [radius]="radius"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#428cff'"
-          [innerStrokeColor]="pause ? '#ff4961': '#50c8ff'"
-          [animation]="false"
-          [animationDuration]="300"
+          [outerStrokeColor]="PRIMARY_COLOR"
+          [innerStrokeColor]="pause && !start ? DANGER_COLOR : SECONDARY_COLOR"
+          [animation]="true"
+          [animationDuration]="100"
           [title]="clock | timeFormat"
           [showTitle]="true"
           [showUnits]="false"
           [showSubtitle]="true"
-          [subtitle]="pause ? 'Paused' : ''"
+          [subtitle]="getSubtitle()"
           [titleFontSize]="35"
           [subtitleFontSize]="25"
-          [titleColor]="'#428cff'"
+          [titleColor]="PRIMARY_COLOR"
         ></circle-progress>
       </ion-col>
     </ion-row>

@@ -13,7 +13,6 @@ import { TimerCreateComponent } from '../../shared/components/timer-create/timer
   styleUrls: ['./timer.page.scss'],
 })
 export class TimerPage implements OnInit, OnDestroy {
-
   public rounds = 1;
   public clock = 70;
   public pause = true;
@@ -34,17 +33,16 @@ export class TimerPage implements OnInit, OnDestroy {
   private _initialClock = this.clock;
   private _audio: HTMLAudioElement;
 
-  private readonly TAP_SOUND = '../../assets/sounds/button-50.mp3';
+  private readonly TAP_SOUND = './assets/sounds/button-50.mp3';
   private readonly START = 'Start';
   private readonly PAUSED = 'Paused';
   private readonly ON = 'On';
 
-  constructor(
-    private insomnia: Insomnia,
-    private modalCtrl: ModalController) { }
+  constructor(private insomnia: Insomnia, private modalCtrl: ModalController) {}
 
   ngOnInit(): void {
     this._audio = new Audio(this.TAP_SOUND);
+    console.log(this.TAP_SOUND);
   }
 
   ionViewDidLeave(): void {
@@ -57,12 +55,13 @@ export class TimerPage implements OnInit, OnDestroy {
 
   public onCreateTimer(): void {
     this.onReset();
-    this.modalCtrl.create({
-      keyboardClose: true,
-      component: TimerCreateComponent,
-      id: 'createTimer'
-    }).then(
-      async modalEl => {
+    this.modalCtrl
+      .create({
+        keyboardClose: true,
+        component: TimerCreateComponent,
+        id: 'createTimer',
+      })
+      .then(async (modalEl) => {
         modalEl.present();
         this.pause = true;
         const { data } = await modalEl.onWillDismiss();
@@ -73,8 +72,7 @@ export class TimerPage implements OnInit, OnDestroy {
           }
           this.initialRounds = data.rounds;
         }
-      }
-    );
+      });
   }
 
   public onToggle(pause?: boolean): void {
@@ -104,8 +102,7 @@ export class TimerPage implements OnInit, OnDestroy {
           this.insomnia.keepAwake();
         })
       )
-      .subscribe(() => {
-      });
+      .subscribe(() => {});
   }
 
   public onReset() {
@@ -124,11 +121,11 @@ export class TimerPage implements OnInit, OnDestroy {
 
   public getSubtitle(): string {
     if (this.start) {
-      return this.START
+      return this.START;
     } else if (this.pause) {
-      return this.PAUSED
+      return this.PAUSED;
     } else {
-      return this.ON
+      return this.ON;
     }
   }
 
@@ -152,5 +149,4 @@ export class TimerPage implements OnInit, OnDestroy {
       this.isBlocked = true;
     }
   }
-
 }

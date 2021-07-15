@@ -25,7 +25,14 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 // GLOBAL CLASS
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .primary-color {
   color: var(--ion-color-primary);
 }
@@ -40,6 +47,7 @@
 
 // Circle progress
 circle-progress {
+  font-family: 'Roboto', sans-serif;
   &.paused {
     svg {
       animation: opacity 1.5s infinite;

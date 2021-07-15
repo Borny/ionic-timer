@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1626355784793,
+  "timestamp": 1626359350854,
   "index": "https://borny.github.io/ionic-timer/index.html",
   "assetGroups": [
     {
@@ -23,8 +23,8 @@
         "https://borny.github.io/ionic-timer/5329-es5.c3f4e3caed0b37e2beb3.js",
         "https://borny.github.io/ionic-timer/6053-es2015.a54961c43f5194e2d128.js",
         "https://borny.github.io/ionic-timer/6053-es5.a54961c43f5194e2d128.js",
-        "https://borny.github.io/ionic-timer/6282-es2015.706506ec5b74a0f50910.js",
-        "https://borny.github.io/ionic-timer/6282-es5.706506ec5b74a0f50910.js",
+        "https://borny.github.io/ionic-timer/6282-es2015.88ccedce2d11f01059c5.js",
+        "https://borny.github.io/ionic-timer/6282-es5.88ccedce2d11f01059c5.js",
         "https://borny.github.io/ionic-timer/6382-es2015.694cc308235cefb15cad.js",
         "https://borny.github.io/ionic-timer/6382-es5.694cc308235cefb15cad.js",
         "https://borny.github.io/ionic-timer/7822-es2015.99165e4b9fe01cd8bf27.js",
@@ -43,8 +43,8 @@
         "https://borny.github.io/ionic-timer/manifest.webmanifest",
         "https://borny.github.io/ionic-timer/polyfills-es2015.5e71d1ad6d55090bc848.js",
         "https://borny.github.io/ionic-timer/polyfills-es5.38212f8030610d87be6f.js",
-        "https://borny.github.io/ionic-timer/runtime-es2015.142ce6de6f903ad38e19.js",
-        "https://borny.github.io/ionic-timer/runtime-es5.142ce6de6f903ad38e19.js",
+        "https://borny.github.io/ionic-timer/runtime-es2015.f7eade2551d1b68fa8c6.js",
+        "https://borny.github.io/ionic-timer/runtime-es5.f7eade2551d1b68fa8c6.js",
         "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-ios-entry-js-es2015.39797a866a7f1a87abc7.js",
         "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-ios-entry-js-es5.39797a866a7f1a87abc7.js",
         "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-md-entry-js-es2015.90e66fe011fabeaec574.js",
@@ -205,7 +205,7 @@
         "https://borny.github.io/ionic-timer/stencil-polyfills-css-shim-es5.4d5f32312eeb533b00f9.js",
         "https://borny.github.io/ionic-timer/stencil-polyfills-dom-es2015.2c525f8cda67789dc88b.js",
         "https://borny.github.io/ionic-timer/stencil-polyfills-dom-es5.2c525f8cda67789dc88b.js",
-        "https://borny.github.io/ionic-timer/styles.8405938401b166506da9.css"
+        "https://borny.github.io/ionic-timer/styles.6be67abf5e1eb310b3ff.css"
       ],
       "patterns": []
     },
@@ -250,8 +250,8 @@
     "https://borny.github.io/ionic-timer/5329-es5.c3f4e3caed0b37e2beb3.js": "7c9c4c8c9d69b4efa58e66ff1abc89b893468bff",
     "https://borny.github.io/ionic-timer/6053-es2015.a54961c43f5194e2d128.js": "61d46a6e7d8cec4ce188073593b32a95c57c6046",
     "https://borny.github.io/ionic-timer/6053-es5.a54961c43f5194e2d128.js": "7821d7298f20dd1d048cb26a7f1f83ee5eeb1f91",
-    "https://borny.github.io/ionic-timer/6282-es2015.706506ec5b74a0f50910.js": "1ee17aa111d4e5cff900e9304161cdbc4f45584c",
-    "https://borny.github.io/ionic-timer/6282-es5.706506ec5b74a0f50910.js": "b7da18fc9f089a084245548eaa08c39b86142e50",
+    "https://borny.github.io/ionic-timer/6282-es2015.88ccedce2d11f01059c5.js": "7d29f93e5b553f2e6af148eb96b6f60488b6addd",
+    "https://borny.github.io/ionic-timer/6282-es5.88ccedce2d11f01059c5.js": "18a18848278fe464243c8036ee5fd3ee9a3de1f7",
     "https://borny.github.io/ionic-timer/6382-es2015.694cc308235cefb15cad.js": "5f3c029673b7b373b625cf30b935f8b6564c3a33",
     "https://borny.github.io/ionic-timer/6382-es5.694cc308235cefb15cad.js": "695616b2607375f953a566afda9b4370163ce865",
     "https://borny.github.io/ionic-timer/7822-es2015.99165e4b9fe01cd8bf27.js": "195342bba8e1eb1554d2eb14200a28ef5b5e73fe",
@@ -279,14 +279,14 @@
     "https://borny.github.io/ionic-timer/assets/sounds/button-50.mp3": "7ccd9f0133e55fd30b1817accd93fa504878bbfa",
     "https://borny.github.io/ionic-timer/common-es2015.ce8198e014307457071b.js": "340bd27fe0ba718d65ad68a97c683a6b77366508",
     "https://borny.github.io/ionic-timer/common-es5.ce8198e014307457071b.js": "808627c82aef86d5b9483df6ae3c0b69a2cf231a",
-    "https://borny.github.io/ionic-timer/index.html": "1b7b4d9762ff081f1113ec0a4e2df47d5e4f5751",
+    "https://borny.github.io/ionic-timer/index.html": "ae1eeb86f395665ec0347d63a43c87c9c2fe5ada",
     "https://borny.github.io/ionic-timer/main-es2015.9cae8c0836ce58bc6572.js": "104c7dda803cc7d2f3f8c02dba8d47fd257f655d",
     "https://borny.github.io/ionic-timer/main-es5.9cae8c0836ce58bc6572.js": "3fb2d518a25b93d1de9d3244554d16dc8c7d9a9a",
     "https://borny.github.io/ionic-timer/manifest.webmanifest": "59667c70abf1cac1d8ee813e33f383099339097d",
     "https://borny.github.io/ionic-timer/polyfills-es2015.5e71d1ad6d55090bc848.js": "c868c266e1558d5c0bde528bba93ba14a2925529",
     "https://borny.github.io/ionic-timer/polyfills-es5.38212f8030610d87be6f.js": "04d754f16254f5091d3901e6ca5ede3eca7271c9",
-    "https://borny.github.io/ionic-timer/runtime-es2015.142ce6de6f903ad38e19.js": "b63ab7287418583911b139ba217b6d724591b60b",
-    "https://borny.github.io/ionic-timer/runtime-es5.142ce6de6f903ad38e19.js": "192dd01073b51e19566378feddb9af18e8732712",
+    "https://borny.github.io/ionic-timer/runtime-es2015.f7eade2551d1b68fa8c6.js": "2a86d5b3c048838d9b0baf139faca90d213fc36a",
+    "https://borny.github.io/ionic-timer/runtime-es5.f7eade2551d1b68fa8c6.js": "bdd4fdd8ad8d9b62cb20518e45165cd0416301e4",
     "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-ios-entry-js-es2015.39797a866a7f1a87abc7.js": "8c1abf8ca1c13bbe3d3201f1bdfa1915dbcc910b",
     "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-ios-entry-js-es5.39797a866a7f1a87abc7.js": "39a68726fefc44db6da3c8596bb0262230d505fa",
     "https://borny.github.io/ionic-timer/stencil-ion-action-sheet-md-entry-js-es2015.90e66fe011fabeaec574.js": "344afa9f95bbf3b3e3632e0600e4dd9d2798cc7d",
@@ -447,7 +447,7 @@
     "https://borny.github.io/ionic-timer/stencil-polyfills-css-shim-es5.4d5f32312eeb533b00f9.js": "a386a14686d83cacab89ab69d04166a0fbf4e93e",
     "https://borny.github.io/ionic-timer/stencil-polyfills-dom-es2015.2c525f8cda67789dc88b.js": "64d44dc4bb1e0a02c7ba021bedb892bb0b88ba88",
     "https://borny.github.io/ionic-timer/stencil-polyfills-dom-es5.2c525f8cda67789dc88b.js": "64d44dc4bb1e0a02c7ba021bedb892bb0b88ba88",
-    "https://borny.github.io/ionic-timer/styles.8405938401b166506da9.css": "c7a690d6f97513d243a240e41330534a10c5f072"
+    "https://borny.github.io/ionic-timer/styles.6be67abf5e1eb310b3ff.css": "bb9d2f6e2aee89802f9be8d4cb1449740d2a6d99"
   },
   "navigationUrls": [
     {

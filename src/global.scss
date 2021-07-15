@@ -45,6 +45,13 @@ circle-progress {
       animation: opacity 1.5s infinite;
     }
   }
+  &.ongoing {
+    svg {
+      circle {
+        animation: opacity 2s infinite;
+      }
+    }
+  }
 }
 
 @keyframes opacity {

@@ -6,9 +6,35 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid class="grid ion-text-center">
-    <ion-row class="row ion-align-items-center">
+    <!-- <ion-row class="row ion-align-items-center">
       <ion-col size="12" size-sm="6" offset-sm="3">
         <p class="clock">{{clock | timeFormat}}</p>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row class="row ion-align-items-center">
+      <ion-col size="12" size-sm="6" offset-sm="3">
+        <circle-progress
+          [ngClass]="{'paused' : pause && !start, 'ongoing' : !pause && !start}"
+          (click)="onToggle()"
+          [startFromZero]="false"
+          [percent]="percent"
+          [radius]="radius"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="PRIMARY_COLOR"
+          [innerStrokeColor]="pause && !start ? DANGER_COLOR : SECONDARY_COLOR"
+          [animation]="true"
+          [animationDuration]="100"
+          [title]="clock | timeFormat"
+          [showTitle]="true"
+          [showUnits]="false"
+          [showSubtitle]="true"
+          [subtitle]="subtitle"
+          [titleFontSize]="35"
+          [subtitleFontSize]="25"
+          [titleColor]="PRIMARY_COLOR"
+        ></circle-progress>
       </ion-col>
     </ion-row>
     <ion-row class="row ion-align-items-center">

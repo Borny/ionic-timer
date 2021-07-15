@@ -4,6 +4,7 @@ A PWA timer app using Ionic and Angular
 ![ionic timer icon](./src/assets/favicon/favicon.png)
 
 ## Live demo
+
 Use this link and install the app on your PC or mobile as a PWA:
 
 https://borny.github.io/ionic-timer/
@@ -11,7 +12,7 @@ https://borny.github.io/ionic-timer/
 ## Technologies
 
 - Ionic 5
-- Angular 11
+- Angular 12
 
 ## Fonctionalities
 
@@ -23,10 +24,11 @@ https://borny.github.io/ionic-timer/
 
 Run `ionic s` to launch the dev server.  
 The flag `--hmr` can be used for **Hot Module Replacement** functionality: `ionic s -- --hmr`.  
-Navigate to `https://localhost:8100` (the app should open itself on your default browser).  
+Navigate to `https://localhost:8100` (the app should open itself on your default browser).
 
 ## Installing the app
-After opening the app on a browser, install it on your device by clicking the popup or going to the settings.  
+
+After opening the app on a browser, install it on your device by clicking the popup or going to the settings.
 
 <!-- ## Screenshots
 

@@ -40,7 +40,7 @@ export class StopwatchPage implements OnDestroy {
     this.onReset();
   }
 
-  public onToggle(pause?: boolean): void {
+  public onToggle(): void {
     this.pause = !this.pause;
     this.start = false;
     this.getSubtitle();

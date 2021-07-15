@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'player-controls',
-  templateUrl: './player-controls.component.html'
+  templateUrl: './player-controls.component.html',
 })
 export class PlayerControlsComponent {
   @Input() isBlocked: boolean;
@@ -18,5 +18,4 @@ export class PlayerControlsComponent {
   public onReset(): void {
     this.reset.emit();
   }
-
 }

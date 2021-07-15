@@ -9,14 +9,14 @@
 }
 
 .text {
-  font-size: 4rem;
+  font-size: 3rem;
 
   @media (min-width: 540px) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   span {
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--ion-color-medium);
   }
 }
@@ -27,9 +27,8 @@
   @media (min-width: 540px) {
     font-size: 3rem;
   }
-
 }
 
 p {
-  margin: 0
+  margin: 0;
 }

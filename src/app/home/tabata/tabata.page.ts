@@ -1,4 +1,11 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 import { Subscription, interval, Observable, fromEvent, timer } from 'rxjs';
@@ -14,7 +21,6 @@ import { IntervalType } from '../../types/interval-type.enum';
   styleUrls: ['./tabata.page.scss'],
 })
 export class TabataPage implements OnInit, OnDestroy {
-
   public round = 1;
   public clock = 10;
   public timeElapsed = 0;
@@ -33,9 +39,9 @@ export class TabataPage implements OnInit, OnDestroy {
   private _initialClock = this.clock;
   private _audio: HTMLAudioElement;
 
-  private readonly TAP_SOUND = '../../assets/sounds/button-50.mp3';
+  private readonly TAP_SOUND = './assets/sounds/button-50.mp3';
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this._audio = new Audio(this.TAP_SOUND);
@@ -53,12 +59,13 @@ export class TabataPage implements OnInit, OnDestroy {
 
   public onCreateTabata() {
     this.onReset();
-    this.modalCtrl.create({
-      keyboardClose: true,
-      component: TabataCreateComponent,
-      id: 'createTimer'
-    }).then(
-      async modalEl => {
+    this.modalCtrl
+      .create({
+        keyboardClose: true,
+        component: TabataCreateComponent,
+        id: 'createTimer',
+      })
+      .then(async (modalEl) => {
         modalEl.present();
         this.pause = true;
         const { data } = await modalEl.onWillDismiss();
@@ -68,8 +75,7 @@ export class TabataPage implements OnInit, OnDestroy {
           this.initialRounds = data.rounds;
           this.clock = data.timer;
         }
-      }
-    );
+      });
   }
 
   public onToggle(pause: boolean) {
@@ -95,17 +101,17 @@ export class TabataPage implements OnInit, OnDestroy {
 
           // Switch interval type
           if (
-            (this.intervalType === IntervalType.getReady
-              || this.intervalType === IntervalType.rest)
-            && this.clock < 1
+            (this.intervalType === IntervalType.getReady ||
+              this.intervalType === IntervalType.rest) &&
+            this.clock < 1
           ) {
             this.textInfo = TextInfo.work;
             this.intervalType = IntervalType.work;
             this.clock = 20;
             this.intervalTypeTextColor = 'primary-color';
           } else if (
-            this.intervalType === IntervalType.work
-            && this.clock < 1
+            this.intervalType === IntervalType.work &&
+            this.clock < 1
           ) {
             this.textInfo = TextInfo.rest;
             this.intervalType = IntervalType.rest;
@@ -115,8 +121,7 @@ export class TabataPage implements OnInit, OnDestroy {
           console.log(this.clock);
         })
       )
-      .subscribe(() => {
-      });
+      .subscribe(() => {});
   }
 
   public onReset() {
@@ -151,5 +156,4 @@ export class TabataPage implements OnInit, OnDestroy {
       this.isBlocked = true;
     }
   }
-
 }
